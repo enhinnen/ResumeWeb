@@ -1,37 +1,37 @@
 Business Analysis
 Experience: Intermediate (5 yrs)
 Companies: Roundedcube, Dell Software Group, Quest Software, Ralis Services
-Description
+(description)
 
 Quality Assurance
 Experience: Advanced (8 yrs)
 Companies: Biomedical Systems, Roundedcube, Dell Software Group, Quest Software, Ralis Services
-Description
+(description)
 
 SQL
 Experience: Intermediate (5 yrs)
 Companies: Biomedical Systems, Dell Software Group, Quest Software, Ralis Services
-Description
+(description)
 
 Software/System Documentation
 Experience: Advanced (7 yrs)
 Companies: Biomedical Systems, Roundedcube,Dell Software Group, Quest Software, Ralis Services
-Description
+(description)
 
 Training and Training Documentation
 Experience: Intermediate (3 yrs)
 Companies: Roundedcube, Dell Software Group, Quest Software, Ralis Services
-Description
+(description)
 
 Project Management
 Experience: Intermediate (5 yrs)
 Companies: Roundedcube, Dell Software Group, Quest Software, Ralis Services
-Description
+(description)
 
 Requirement Gathering, Writing, and Analysis
 Experience: Intermediate (5 yrs)
 Companies: Roundedcube, Dell Software Group, Quest Software, Ralis Services
-Description
+(description)
 
 IT Troubleshooting
 Experience: Expert (10 yrs)
@@ -41,4 +41,4 @@ From a young age, I worked with my father to troubleshoot PC issues. He register
 Release Management
 Experience: Intermediate (5 yrs)
 Companies:
-Description
+(description)
