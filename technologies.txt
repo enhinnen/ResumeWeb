@@ -1,0 +1,59 @@
+Sitecore
+Experience: Intermediate (4 yrs)
+Companies: Roundedcube
+(description)
+
+Salesforce
+Experience: Novice (2 yrs)
+Companies: Roundedcube, Ralis Services
+(description)
+
+Postman
+Experience: Novice (2 yrs)
+Companies: Dell Software Group, Quest Software, Ralis Services
+(description)
+
+Browserstack
+Experience: (6 yrs)
+Companies: Roundedcube, Dell Software Group, Quest Software, Ralis Services
+(description)(
+
+Visio
+Experience: Novice (2 yrs)
+Companies: Dell Software Group, Quest Software, Ralis Services
+(description)
+
+SQL Databases
+Experience: (6 yrs)
+Companies: Biomedical Systems, Roundedcube, Dell Software Group, Quest Software, Ralis Services
+Description
+
+Oracle Databases
+Experience: Novice (2 yrs)
+Companies: Dell Software Group, Quest Software, Ralis Services
+(description)
+
+JustInMind
+Experience: Novice (1 yr)
+Companies: Dell Software Group, Quest Software
+(description)
+
+Gitlab
+Experience:
+Companies:
+(description)
+
+Github
+Experience:
+Companies:
+(description)
+
+Microsoft TFS
+Experience:
+Companies:
+(description)
+
+Microsoft Office Suite
+Experience: Expert (10 yrs)
+Companies: Biomedical Systems, Roundedcube, Dell Software Group, Quest Software, Ralis Services
+(description)
