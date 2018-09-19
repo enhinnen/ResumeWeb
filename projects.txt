@@ -1,0 +1,74 @@
+SeaWorld Parks
+Project: Sitecore Integration
+Role: QA
+
+SeaWorld Event Microsites
+Project: Design and Development
+Role: QA
+
+SeaWorld Kids
+Project: Design and Development
+Role: BSA
+
+Big Brothers Big Sisters of Eastern Missouri (BBBSEMO)
+Project: ABC Intelligence Tool
+Role: Project Coordination, QA
+
+Bistro Gourmet Bakery (Sara Lee)
+Project: Design and Development
+Role: Project Coordination, QA
+
+CDPHP
+Project: Mobile Optimization and Sitecore Integration
+Role: Project Coordination, QA
+
+CCCU.Org
+Project: Support and Maintenance
+Role: PM, BSA, QA
+
+CCCU.Org
+Project: Sitecore Upgrade
+Role: PM, BSA, QA
+
+Dierbergs.com
+Project: Redesign and Development
+Role: BSA, QA
+
+One Identity Support Portal
+Project: Design and Development
+Role: PM, BSA
+
+SonicWall Support Portal
+Project: Design and Development
+Role: PM, BSA
+Second Baptist Church (Second.org)
+Project: Browser Compatibility Testing and Resolution
+Role: PM, BSA
+
+Tomatina
+Project: Redesign and Development
+Role: BSA, QA
+
+West Wind Drive-In
+Project: Redesign and Development
+Role: BSA, QA
+
+VillaSport Athletic Spa and Club
+Project: Redesign and Development
+Role: BSA, QA
+
+Villa de Amore
+Project: Support and Maintenance
+Role: BSA, QA
+
+Dell Software Support Portal
+Project: Support and Maintenance
+Role: BSA, PM
+
+Quest Software Support Portal
+Project: Dell to Quest Rebranding
+Role: BSA, PM
+
+Quest Software Support Portal
+Project: Support and Maintenance
+Role: BSA, PM
