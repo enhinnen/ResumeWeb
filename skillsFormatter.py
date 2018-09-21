@@ -20,9 +20,9 @@
 
 import os
 # input filenames
-SIN = './ResumeWeb/skills.txt'
-TIN = './ResumeWeb/technologies.txt'
-PIN = './ResumeWeb/projects.txt'
+SIN = './skills.txt'
+TIN = './technologies.txt'
+PIN = './projects.txt'
 # output filenames
 SOUT = './skills.html'
 TOUT = './technologies.html'
@@ -73,12 +73,12 @@ def getLinesPerItem(mode):
     if mode == P:
         return 4    
 
-def getNumberOfItems(TXT):
+def getNumberOfItems(TXT, mode):
     n = 0
     for c in TXT:
         if c == '\n':
             n += 1
-    return int((n+2) / 5)
+    return int((n+2) / getLinesPerItem(mode))
 
 def getItemTXT(TXT, numberOfItems, mode):
     itemTXT = [''] * numberOfItems
@@ -166,7 +166,7 @@ if __name__ == '__main__':
 #-----------------TESTING AREA BELOW THIS LINE - DELETE EVERYTHING BEFORE FINAL USE-----------------
 def run(mode):
     TXT = getTXT(mode)
-    numberOfItems = getNumberOfItems(TXT)
+    numberOfItems = getNumberOfItems(TXT, mode)
     itemTXT = getItemTXT(TXT, numberOfItems, mode)
     itemHTML = getItemHTML(itemTXT, mode)
     HTML = getHTML(itemHTML)
