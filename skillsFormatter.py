@@ -17,6 +17,8 @@
 #       _ After conversion, push to repository and clean up local files
 #       _ Format skills and technologies together with full page HTML
 #           including scripts, etc...
+#   KNKOWN ISSUES:
+#       _ Need to add newlines to HTML output ('\\n') after each newline in an item
 
 import os
 # input filenames
