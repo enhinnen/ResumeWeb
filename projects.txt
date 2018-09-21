@@ -41,6 +41,7 @@ Role: PM, BSA
 SonicWall Support Portal
 Project: Design and Development
 Role: PM, BSA
+
 Second Baptist Church (Second.org)
 Project: Browser Compatibility Testing and Resolution
 Role: PM, BSA
