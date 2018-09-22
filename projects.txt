@@ -1,6 +1,6 @@
-Big Brothers Big Sisters of Eastern Missouri (BBBSEMO)
-Project: ABC Intelligence Tool 2.0
-Role: Project Coordination, QA
+Aegion
+Project Support and Maintenance, Intranet
+Role: Project Coordination, QA, BSA
 
 Bistro Gourmet Bakery (Sara Lee)
 Project: Design and Development
