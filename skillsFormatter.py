@@ -24,31 +24,24 @@ import os
 # input filenames
 SIN = './skills.txt'
 TIN = './technologies.txt'
-PIN = './projects.txt'
 # output filenames
 SOUT = './skills.html'
 TOUT = './technologies.html'
-POUT = './projects.html'
 # modes
 S = 'skills'
 T = 'technologies'
-P = 'projects'
 
 def getInPath(mode):
     if mode == S:
         return SIN
     if mode == T:
         return TIN
-    if mode == P:
-        return PIN
 
 def getOutPath(mode):
     if mode == S:
         return SOUT
     if mode == T:
         return TOUT
-    if mode == P:
-        return POUT
 
 def writeHTML(HTML, mode):
     path = getOutPath(mode)
@@ -72,8 +65,6 @@ def getHTML(itemHTML):
 def getLinesPerItem(mode):
     if mode == S or mode == T:
         return 5
-    if mode == P:
-        return 4    
 
 def getNumberOfItems(TXT, mode):
     n = 0
@@ -111,13 +102,15 @@ def getItemListTXT(itemTXT):
                     itemCharIndex = len(itemTXT[itemIndex]) + 1
     return itemListTXT
 
-def getItemAccordionTXT(itemTXT):
+def getItemAccordionTXT(itemTXT, mode):
     itemAccordionTXT = [''] * len(itemTXT)
     for itemIndex in range(len(itemTXT)):
         itemStringIndex = 0
         endIndex = 0
+        newlines = 0
         while endIndex < len(itemTXT[itemIndex]):
             if itemTXT[itemIndex][itemStringIndex] == '\n':
+                newlines += 1
                 startIndex = itemStringIndex + 1
                 endIndex = startIndex + 1
                 try:
@@ -125,7 +118,12 @@ def getItemAccordionTXT(itemTXT):
                         endIndex += 1
                 except:
                     iDontKnowWhatImDoing=True
-                itemAccordionTXT[itemIndex] += itemTXT[itemIndex][startIndex:endIndex + 1]
+                for n in range(2, getLinesPerItem(mode) - 1):
+                    if newlines == n:
+                        itemAccordionTXT[itemIndex] += '<br/>'
+                if newlines == getLinesPerItem(mode) - 2:
+                    itemAccordionTXT[itemIndex] += '<br/>'
+                itemAccordionTXT[itemIndex] +=itemTXT[itemIndex][startIndex:endIndex + 1]
                 if endIndex < len(itemTXT[itemIndex]) - 1:
                     itemAccordionTXT[itemIndex] += '\t\t'
             itemStringIndex += 1
@@ -147,7 +145,7 @@ def getItemAccordionHTML(itemListTXT, itemAccordionTXT, mode):
 
 def getItemHTML(itemTXT, mode):
     itemListTXT = getItemListTXT(itemTXT)    
-    itemAccordionTXT = getItemAccordionTXT(itemTXT)
+    itemAccordionTXT = getItemAccordionTXT(itemTXT, mode)
     itemListHTML = getItemListHTML(itemListTXT, mode)
     itemAccordionHTML = getItemAccordionHTML(itemListTXT, itemAccordionTXT, mode)
     # TODO formatList, formatAccordion
