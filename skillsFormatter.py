@@ -167,7 +167,7 @@ def run():
     technologiesListHTML = getItemListHTML(technologiesListTXT, T)
     technologiesAccordionHTML = getItemAccordionHTML(technologiesListTXT, getItemAccordionTXT(technologiesTXT, T), T)
 
-    listHTML = '<h3 id="SKILLS_LIST">SKILLS</h3>\n' + getHTML(skillsListHTML)+ br + '<h3 id=TECHNOLOGIES_LIST">TECHNOLOGIES</h3>\n' + getHTML(technologiesListHTML)
+    listHTML = '<h3 id="SKILLS_LIST">SKILLS</h3>\n' + getHTML(skillsListHTML)+ br + '<h3 id="TECHNOLOGIES_LIST">TECHNOLOGIES</h3>\n' + getHTML(technologiesListHTML)
     accordionHTML = '<h3 id="SKILLS_ACCORDION">SKILLS</h3>\n' + getHTML(skillsAccordionHTML) + br + br + '<h3 id=TECHNOLOGIES_ACCORDION">TECHNOLOGIES</h3>\n' + getHTML(technologiesAccordionHTML)
 
     bodyHTML = '<body>\n' + listHTML + br + '\n' + accordionHTML + '\n' + readFile('script.html') + '\n</body>'
