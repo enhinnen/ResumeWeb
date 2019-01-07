@@ -15,35 +15,27 @@
 #       _ Clone/Update from set github repository
 #           https://github.com/enhinnen/ResumeWeb
 #       _ After conversion, push to repository and clean up local files
-#       _ Format skills and technologies together with full page HTML
-#           including scripts, etc...
 #   KNKOWN ISSUES:
 #       _ Need to add newlines to HTML output ('\\n') after each newline in an item
 
 import os
-# input filenames
-SIN = './skills.txt'
-TIN = './technologies.txt'
-# output filenames
-SOUT = './skills.html'
-TOUT = './technologies.html'
+
+PATH = './'
+inPATH = './'
+outPATH = './'
+
 # modes
 S = 'skills'
 T = 'technologies'
+F = 'full'
 
 def getInPath(mode):
-    if mode == S:
-        return SIN
-    if mode == T:
-        return TIN
+    return inPATH + mode + '.txt'
 
 def getOutPath(mode):
-    if mode == S:
-        return SOUT
-    if mode == T:
-        return TOUT
+    return outPATH + mode + '.html'
 
-def writeHTML(HTML, mode):
+def writeToFile(HTML, mode):
     path = getOutPath(mode)
     file = open(path, 'w')
     file.write(HTML)
@@ -55,6 +47,12 @@ def getTXT(mode):
     TXT = file.read()
     file.close()
     return TXT
+
+def readFile(filename):
+    file = open(PATH + filename)
+    HTML = file.read()
+    file.close()
+    return HTML
 
 def getHTML(itemHTML):
     HTML = ''
@@ -143,18 +141,6 @@ def getItemAccordionHTML(itemListTXT, itemAccordionTXT, mode):
         itemAccordionHTML[itemIndex] = '<button id="' + buttonID + '" class="accordion">\n\t' + itemListTXT[itemIndex] + '\n</button>\n<div class="panel">\n\t<p>\n\t\t' + itemAccordionTXT[itemIndex] + '\t</p>\n\t<a href="#' + mode.upper() + '_LIST">Return to ' + mode + ' list</a>\n</div>\n'
     return itemAccordionHTML                
 
-def getItemHTML(itemTXT, mode):
-    itemListTXT = getItemListTXT(itemTXT)    
-    itemAccordionTXT = getItemAccordionTXT(itemTXT, mode)
-    itemListHTML = getItemListHTML(itemListTXT, mode)
-    itemAccordionHTML = getItemAccordionHTML(itemListTXT, itemAccordionTXT, mode)
-    # TODO formatList, formatAccordion
-    #       adds tags outside of individual items
-    # itemListHTML = formatList(itemListHTML)
-    # itemAccordionHTML = formatAccordion(itemAccordionHTML)
-    itemHTML = itemListHTML + ['\n\n'] + itemAccordionHTML    
-    return itemHTML
-
 def main():
     return 0
     
@@ -164,10 +150,28 @@ if __name__ == '__main__':
     main()
 
 #-----------------TESTING AREA BELOW THIS LINE - DELETE EVERYTHING BEFORE FINAL USE-----------------
-def run(mode):
-    TXT = getTXT(mode)
-    numberOfItems = getNumberOfItems(TXT, mode)
-    itemTXT = getItemTXT(TXT, numberOfItems, mode)
-    itemHTML = getItemHTML(itemTXT, mode)
-    HTML = getHTML(itemHTML)
-    writeHTML(HTML, mode)
+br = '\n</br>\n'
+    
+def run():
+    sTXT = getTXT(S)
+    numberOfSkills = getNumberOfItems(sTXT, S)
+    skillsTXT = getItemTXT(sTXT, numberOfSkills, S)
+    skillsListTXT = getItemListTXT(skillsTXT)
+    skillsListHTML = getItemListHTML(skillsListTXT, S)
+    skillsAccordionHTML = getItemAccordionHTML(skillsListTXT, getItemAccordionTXT(skillsTXT, S), S)
+
+    tTXT = getTXT(T)
+    numberOfTechnologies = getNumberOfItems(tTXT, T)
+    technologiesTXT = getItemTXT(tTXT, numberOfTechnologies, T)
+    technologiesListTXT = getItemListTXT(technologiesTXT)
+    technologiesListHTML = getItemListHTML(technologiesListTXT, T)
+    technologiesAccordionHTML = getItemAccordionHTML(technologiesListTXT, getItemAccordionTXT(technologiesTXT, T), T)
+
+    listHTML = '<h3 id="SKILLS_LIST">SKILLS</h3>\n' + getHTML(skillsListHTML)+ br + '<h3 id=TECHNOLOGIES_LIST">TECHNOLOGIES</h3>\n' + getHTML(technologiesListHTML)
+    accordionHTML = '<h3 id="SKILLS_ACCORDION">SKILLS</h3>\n' + getHTML(skillsAccordionHTML) + br + br + '<h3 id=TECHNOLOGIES_ACCORDION">TECHNOLOGIES</h3>\n' + getHTML(technologiesAccordionHTML)
+
+    bodyHTML = '<body>\n' + listHTML + br + '\n' + accordionHTML + '\n' + readFile('script.html') + '\n</body>'
+
+    HTML = readFile('head.html') + '\n' + bodyHTML
+    
+    writeToFile(HTML, F)
