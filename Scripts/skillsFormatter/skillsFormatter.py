@@ -1,3 +1,9 @@
+# Formats text into an HTML page featuring lists, buttons and an accordion
+# Takes .txt files from ../../TXT/, converts to HTML and outputs to ../../HTML/skills-technologies.html
+# Requires ./head.html and ./script.html
+
+# TODO: write __main__ function so script can be run from command line
+
 import os, string
 
 PATH = './'
