@@ -2,14 +2,12 @@
 # Takes .txt files from ../../TXT/, converts to HTML and outputs to ../../HTML/skills-technologies.html
 # Requires ./head.html and ./script.html
 
-# TODO: write __main__ function so script can be run from command line
-
 import os, string
 
 PATH = './'
 ROOT = '../../'
 inPATH = ROOT + 'TXT/'
-outPATH = ROOT + 'HTML/'
+outPATH = ROOT + 'HTML/skills-technologies.html'
 
 S = 'skills'
 T = 'technologies'
@@ -24,8 +22,8 @@ class Item:
         self.Companies = companies
         self.Description = description     
 
-def writeToFile(HTML, name):
-    file = open(outPATH+name, 'w')
+def writeToFile(HTML):
+    file = open(outPATH, 'w')
     file.write(HTML)
     file.close()
 
@@ -148,33 +146,34 @@ def getAccordionHTML(skills, tech):
         HTML += tButton + '\n' + tPanel
 
     return HTML
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
-                ################################
-                # TESTING AREA BELOW THIS LINE #
-#===============################################===============#
 
-# HEAD
-headHTML = readFile('head.html', PATH) + '\n'
-# BODY
-# Read files
-STXT = readFile(S+'.txt',inPATH)
-TTXT = readFile(T+'.txt',inPATH)
-# Get Item objects
-skills = getItem(STXT)
-tech = getItem(TTXT)
-# Format titles into HTML list
-listHTML = getListHTML(skills, tech)
-# Format Item objects into HTML buttons and panels
-accordionHTML = getAccordionHTML(skills, tech)
-# Format Body
-bodyHTML = '<body>\n'
-bodyHTML += listHTML
-bodyHTML += '\n<br>\n'
-bodyHTML += accordionHTML
-bodyHTML += '\n' + readFile('script.html', PATH)
-bodyHTML += '</body>'
-# PUT IT ALL TOGETHER
-HTML = headHTML + bodyHTML
-# WRITE IT OUT
-writeToFile(HTML, 'skills-technologies.html')
-print 'successfully wrote to skills-technologies.html'
+def formatBodyHTML(listHTML, accordionHTML):
+    bodyHTML = '<body>\n'
+    bodyHTML += listHTML
+    bodyHTML += '\n<br>\n'
+    bodyHTML += accordionHTML
+    bodyHTML += '\n' + readFile('script.html', PATH)
+    bodyHTML += '</body>'
+    return bodyHTML
+
+# MAIN FUNCTION
+def main():
+    # Get text
+    STXT = readFile(S+'.txt',inPATH)
+    TTXT = readFile(T+'.txt',inPATH)
+    # Get Item objects
+    skills = getItem(STXT)
+    tech = getItem(TTXT)
+    # Format into HTML
+    listHTML = getListHTML(skills, tech)
+    accordionHTML = getAccordionHTML(skills, tech)
+    # Get header, format body and concatenate
+    headHTML = readFile('head.html', PATH) + '\n'
+    bodyHTML = formatBodyHTML(listHTML, accordionHTML)
+    HTML = headHTML + bodyHTML
+    # WRITE IT OUT
+    writeToFile(HTML)
+    print 'successfully wrote to ' + str(os.path.abspath(outPATH))
+
+if __name__ == '__main__':
+    main()
