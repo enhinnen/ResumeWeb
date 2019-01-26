@@ -27,8 +27,8 @@ def writeToFile(HTML):
     file.write(HTML)
     file.close()
 
-def readFile(filename, path):
-    file = open(path + filename)
+def readFile(mode):
+    file = open(inPath + mode + '.txt')
     TXT = file.read()
     file.close()
     return TXT
@@ -159,8 +159,8 @@ def formatBodyHTML(listHTML, accordionHTML):
 # MAIN FUNCTION
 def main():
     # Get text
-    STXT = readFile(S+'.txt',inPATH)
-    TTXT = readFile(T+'.txt',inPATH)
+    STXT = readFile(S)
+    TTXT = readFile(T)
     # Get Item objects
     skills = getItem(STXT)
     tech = getItem(TTXT)

@@ -16,7 +16,7 @@ Companies: Dell Software Group, Quest Software, Ralis Services
 Browserstack
 Experience: (6 yrs)
 Companies: Roundedcube, Dell Software Group, Quest Software, Ralis Services
-(description)(
+(description)
 
 Visio
 Experience: Novice (2 yrs)
@@ -26,7 +26,7 @@ Companies: Dell Software Group, Quest Software, Ralis Services
 SQL Databases
 Experience: (6 yrs)
 Companies: Biomedical Systems, Roundedcube, Dell Software Group, Quest Software, Ralis Services
-Description
+(description)
 
 Oracle Databases
 Experience: Novice (2 yrs)
